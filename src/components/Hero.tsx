@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Play, MessageCircle } from 'lucide-react';
@@ -32,11 +31,10 @@ const Hero = () => {
                 <Play className="mr-2 h-4 w-4" /> Watch Demo
               </Button>
               <Button 
-                as={Link}
-                to="/chat"
                 size="lg" 
                 variant="outline" 
                 className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+                onClick={() => window.location.href = '/chat-with-ai'}
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> Chat with AI
               </Button>
@@ -62,7 +60,6 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              {/* Floating elements for decoration */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-secondary rounded-lg rotate-12 opacity-70"></div>
               <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-primary/60 rounded-full"></div>
             </div>
