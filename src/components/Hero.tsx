@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Play } from 'lucide-react';
+import { Sparkles, Play, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -29,6 +30,15 @@ const Hero = () => {
                 className="border-white text-white hover:bg-white/20 transition-colors duration-300"
               >
                 <Play className="mr-2 h-4 w-4" /> Watch Demo
+              </Button>
+              <Button 
+                as={Link}
+                to="/chat"
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+              >
+                <MessageCircle className="mr-2 h-4 w-4" /> Chat with AI
               </Button>
             </div>
           </div>
