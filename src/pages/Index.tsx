@@ -6,7 +6,7 @@ import Features from '@/components/Features';
 import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { RocketIcon, Users, CheckCircle2, Award } from 'lucide-react';
+import { RocketIcon, Users, CheckCircle2, Award, Play } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -122,7 +122,7 @@ const Index = () => {
               Start Your Free Trial
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Schedule a Demo
+              <Play className="mr-2 h-4 w-4" /> Schedule a Demo
             </Button>
           </div>
         </div>
