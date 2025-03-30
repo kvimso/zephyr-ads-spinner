@@ -125,14 +125,14 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+              className="bg-white text-primary hover:bg-white/90 hover:text-red"
             >
               <Play className="mr-2 h-4 w-4" /> Schedule a Demo
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+              className="bg-white text-primary hover:bg-white/90 hover:text-red"
               asChild
             >
               <Link to="/chat-with-ai">Chat with AI</Link>

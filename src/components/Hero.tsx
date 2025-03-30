@@ -26,14 +26,15 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+                className="bg-white text-primary hover:bg-white/90 hover:text-blue"
+
               >
                 <Play className="mr-2 h-4 w-4" /> Watch Demo
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+                className="bg-white text-primary hover:bg-white/90 hover:text-red"
                 onClick={() => window.location.href = '/chat-with-ai'}
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> Chat with AI
