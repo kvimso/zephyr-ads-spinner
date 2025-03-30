@@ -121,7 +121,11 @@ const Index = () => {
             <Button size="lg" className="bg-white text-primary hover:bg-white/90">
               Start Your Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+            >
               <Play className="mr-2 h-4 w-4" /> Schedule a Demo
             </Button>
           </div>

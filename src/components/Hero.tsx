@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight, Play } from 'lucide-react';
+import { Sparkles, Play } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -23,7 +23,11 @@ const Hero = () => {
               <Button size="lg" className="bg-white text-primary hover:bg-white/90">
                 Start Free Trial
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/20 transition-colors duration-300"
+              >
                 <Play className="mr-2 h-4 w-4" /> Watch Demo
               </Button>
             </div>
