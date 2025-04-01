@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Play, MessageCircle } from 'lucide-react';
@@ -27,7 +28,6 @@ const Hero = () => {
                 size="lg" 
                 variant="outline" 
                 className="bg-white text-primary hover:bg-white/90 hover:text-blue"
-
               >
                 <Play className="mr-2 h-4 w-4" /> Watch Demo
               </Button>
@@ -35,9 +35,11 @@ const Hero = () => {
                 size="lg" 
                 variant="outline" 
                 className="bg-white text-primary hover:bg-white/90 hover:text-red"
-                onClick={() => window.location.href = '/chat-with-ai'}
+                asChild
               >
-                <MessageCircle className="mr-2 h-4 w-4" /> Chat with AI
+                <Link to="/chat-with-ai">
+                  <MessageCircle className="mr-2 h-4 w-4" /> Chat with AI
+                </Link>
               </Button>
             </div>
           </div>
