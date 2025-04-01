@@ -2,6 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -10,7 +12,7 @@ const Navbar = () => {
     <nav className="w-full py-4 bg-background border-b">
       <div className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="font-bold text-2xl text-primary">Zephyr</div>
+          <Link to="/" className="font-bold text-2xl text-primary hover:opacity-90 transition-opacity">Zephyr</Link>
           <span className="text-xs bg-secondary text-white px-2 py-1 rounded-full">AI</span>
         </div>
 
@@ -25,12 +27,14 @@ const Navbar = () => {
           <a href="#about" className="text-foreground hover:text-primary transition-colors">
             About
           </a>
+          <LanguageSwitcher />
           <Button variant="ghost">Login</Button>
           <Button>Get Started</Button>
         </div>
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center">
+          <LanguageSwitcher className="mr-2" />
           <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <Menu />
           </Button>
