@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -10,15 +9,17 @@ import { RocketIcon, Users, CheckCircle2, Award, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AiDemo from '@/components/AiDemo';
 import IntegrationLogos from '@/components/IntegrationLogos';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Index = () => {
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="fixed top-4 right-4 z-50">
-        <LanguageSwitcher />
-      </div>
-      
       <Navbar />
       <Hero />
       
@@ -63,10 +64,8 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button className="flex items-center" asChild>
-                <Link to="/chat-with-ai">
-                  Try Full Version
-                </Link>
+              <Button className="flex items-center" onClick={scrollToPricing}>
+                Try Full Version
               </Button>
             </div>
             

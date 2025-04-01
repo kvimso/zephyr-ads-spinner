@@ -42,11 +42,8 @@ const platforms = [
     logo: '/tiktok.svg',
     color: '#000000',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
-        <path d="M9 8V4"></path>
-        <path d="M9 12h10l-3-3"></path>
-        <path d="M13 20a8 8 0 0 0 8-8V5"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="#000000" d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.59-1.16-2.59-2.5 0-1.4 1.16-2.5 2.59-2.5.27 0 .53.05.77.13V9.37c-.45-.09-.92-.14-1.4-.14-2.76 0-5 1.8-5 3.92C4.23 15.27 6.47 17 9.23 17c2.69 0 4.87-1.65 4.87-3.85l-.02-5.53C15.14 8.24 16.5 8.58 17.93 8.58V5.82c-.42.01-.87.04-1.33 0z" />
       </svg>
     )
   }

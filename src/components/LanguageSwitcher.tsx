@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
 import {
@@ -9,14 +9,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-type Language = 'en' | 'ka';
+export type Language = 'en' | 'ka';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+}
+
+// Create context for language
+export const LanguageContext = createContext<LanguageContextType>({
+  language: 'en',
+  setLanguage: () => {},
+});
+
+// Hook to use language context
+export const useLanguage = () => useContext(LanguageContext);
 
 interface LanguageSwitcherProps {
   className?: string;
 }
 
 const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const { language, setLanguage } = useLanguage();
   
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
