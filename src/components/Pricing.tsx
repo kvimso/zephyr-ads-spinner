@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const pricingPlans = [
   {
@@ -73,8 +72,8 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <div 
               key={index} 
-              className={`relative bg-card p-8 rounded-xl border ${
-                plan.highlighted ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-muted-foreground/20'
+              className={`pricing-card bg-card p-8 rounded-xl border ${
+                plan.highlighted ? 'border-primary shadow-lg relative' : ''
               }`}
             >
               {plan.highlighted && (
@@ -89,7 +88,7 @@ const Pricing = () => {
               </div>
               <p className="text-muted-foreground mb-6">{plan.description}</p>
               <Button 
-                className={`w-full mb-8 ${plan.highlighted ? 'bg-primary hover:bg-primary/90' : ''}`}
+                className={`w-full mb-8 ${plan.highlighted ? 'bg-primary' : ''}`}
                 variant={plan.highlighted ? "default" : "outline"}
               >
                 {plan.buttonText}
@@ -104,12 +103,6 @@ const Pricing = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <Link to="/pricing">
-            <Button variant="outline" size="lg">View Full Pricing Details</Button>
-          </Link>
         </div>
       </div>
     </div>

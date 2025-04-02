@@ -21,12 +21,12 @@ const Navbar = () => {
           <a href="#features" className="text-foreground hover:text-primary transition-colors">
             Features
           </a>
-          <Link to="/industries" className="text-foreground hover:text-primary transition-colors">
+          <a href="#industries" className="text-foreground hover:text-primary transition-colors">
             Industries
-          </Link>
-          <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">
+          </a>
+          <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
             Pricing
-          </Link>
+          </a>
           <a href="#about" className="text-foreground hover:text-primary transition-colors">
             About
           </a>
@@ -51,20 +51,20 @@ const Navbar = () => {
               >
                 Features
               </a>
-              <Link 
-                to="/industries" 
+              <a 
+                href="#industries" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
-              </Link>
-              <Link 
-                to="/pricing" 
+              </a>
+              <a 
+                href="#pricing" 
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
-              </Link>
+              </a>
               <a 
                 href="#about" 
                 className="text-foreground hover:text-primary transition-colors"
