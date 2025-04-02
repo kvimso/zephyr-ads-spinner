@@ -9,6 +9,7 @@ import AIDemoSection from '@/components/AIDemoSection';
 import IntegrationLogosSection from '@/components/IntegrationLogosSection';
 import AboutSection from '@/components/AboutSection';
 import CtaSection from '@/components/CtaSection';
+import ChatWidget from '@/components/ChatWidget';
 
 const Index = () => {
   const scrollToPricing = () => {
@@ -29,6 +30,7 @@ const Index = () => {
       <Pricing />
       <CtaSection />
       <Footer />
+      <ChatWidget />
     </div>
   );
 };
