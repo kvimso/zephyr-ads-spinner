@@ -107,28 +107,28 @@ const ChatWidget = () => {
       {!isOpen ? (
         <Button 
           onClick={toggleWidget}
-          className="rounded-full shadow-lg h-14 w-14 p-0 flex items-center justify-center bg-primary hover:bg-primary/90"
+          className="rounded-full shadow-lg h-12 w-12 p-0 flex items-center justify-center bg-primary hover:bg-primary/90"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-5 w-5" />
         </Button>
       ) : (
-        <Card className="w-80 sm:w-96 shadow-xl flex flex-col h-[460px] overflow-hidden">
-          <div className="flex items-center justify-between bg-primary p-3 text-primary-foreground">
-            <div className="flex items-center gap-2">
-              <Bot className="h-5 w-5" />
-              <h3 className="font-medium">Chat with Ertaoza AI</h3>
+        <Card className="w-72 sm:w-80 shadow-xl flex flex-col h-[400px] overflow-hidden">
+          <div className="flex items-center justify-between bg-primary p-2 text-primary-foreground">
+            <div className="flex items-center gap-1.5">
+              <Bot className="h-4 w-4" />
+              <h3 className="text-sm font-medium">Chat with Ertaoza AI</h3>
             </div>
             <Button 
               variant="ghost" 
               size="icon" 
               onClick={toggleWidget}
-              className="h-8 w-8 text-primary-foreground opacity-70 hover:opacity-100 hover:bg-primary/80"
+              className="h-6 w-6 text-primary-foreground opacity-70 hover:opacity-100 hover:bg-primary/80"
             >
-              <X className="h-4 w-4" />
+              <X className="h-3 w-3" />
             </Button>
           </div>
           
-          <div className="flex-1 overflow-y-auto p-3 space-y-3">
+          <div className="flex-1 overflow-y-auto p-2.5 space-y-2.5">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -139,7 +139,7 @@ const ChatWidget = () => {
               >
                 <div
                   className={cn(
-                    "max-w-[85%] p-3 rounded-lg animate-fade-in",
+                    "max-w-[85%] p-2 rounded-lg text-xs animate-fade-in",
                     message.type === 'user'
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted"
@@ -152,7 +152,7 @@ const ChatWidget = () => {
             
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-muted rounded-lg p-3 flex space-x-1">
+                <div className="bg-muted rounded-lg p-2 flex space-x-1">
                   <span className="animate-bounce">•</span>
                   <span className="animate-bounce" style={{animationDelay: '0.2s'}}>•</span>
                   <span className="animate-bounce" style={{animationDelay: '0.4s'}}>•</span>
@@ -163,21 +163,22 @@ const ChatWidget = () => {
             <div ref={messagesEndRef} />
           </div>
           
-          <div className="p-3 border-t">
-            <div className="flex gap-2">
+          <div className="p-2 border-t">
+            <div className="flex gap-1.5">
               <Textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Type your message..."
-                className="min-h-[60px] resize-none"
+                className="min-h-[50px] resize-none text-xs p-2"
               />
               <Button
                 className="h-full"
+                size="sm"
                 onClick={handleSendMessage}
                 disabled={!input.trim()}
               >
-                <Send className="h-4 w-4" />
+                <Send className="h-3.5 w-3.5" />
               </Button>
             </div>
           </div>

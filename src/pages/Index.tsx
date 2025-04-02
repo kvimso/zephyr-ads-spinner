@@ -21,7 +21,7 @@ const Index = () => {
   };
   
   useEffect(() => {
-    // Add smooth scrolling to all links with hash
+    // Improved smooth scrolling to all links with hash
     const handleNavClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       const link = target.closest('a');
@@ -30,7 +30,15 @@ const Index = () => {
         event.preventDefault();
         const targetElement = document.querySelector(link.hash);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          // Add offset for fixed header
+          const navbarHeight = 60; // Approximate height of navbar
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }
     };
