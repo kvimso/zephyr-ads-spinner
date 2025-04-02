@@ -59,46 +59,45 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <div id="pricing" className="py-16 bg-muted/30">
+    <div id="pricing" className="py-20 bg-muted/30">
       <div className="container px-4 md:px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold mb-3">Simple, Transparent Pricing</h2>
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Choose the plan that fits your business needs. All plans include a 14-day free trial.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <div 
               key={index} 
-              className={`pricing-card bg-card p-6 rounded-xl border ${
-                plan.highlighted ? 'border-primary shadow-lg relative' : 'border-border'
+              className={`pricing-card bg-card p-8 rounded-xl border ${
+                plan.highlighted ? 'border-primary shadow-lg relative' : ''
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Most Popular
                 </div>
               )}
-              <div className="text-base font-medium mb-1">{plan.name}</div>
-              <div className="flex items-baseline mb-4">
-                <span className="text-3xl font-bold">{plan.price}</span>
-                <span className="text-sm ml-1 text-muted-foreground">GEL/month</span>
+              <div className="text-lg font-medium mb-2">{plan.name}</div>
+              <div className="flex items-baseline mb-6">
+                <span className="text-4xl font-bold">{plan.price}</span>
+                <span className="text-lg ml-1 text-muted-foreground">GEL/month</span>
               </div>
-              <p className="text-xs text-muted-foreground mb-4">{plan.description}</p>
+              <p className="text-muted-foreground mb-6">{plan.description}</p>
               <Button 
-                className={`w-full mb-6 ${plan.highlighted ? 'bg-primary hover:bg-primary/90' : ''}`}
+                className={`w-full mb-8 ${plan.highlighted ? 'bg-primary' : ''}`}
                 variant={plan.highlighted ? "default" : "outline"}
-                size="sm"
               >
                 {plan.buttonText}
               </Button>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start">
-                    <Check className="h-4 w-4 text-primary shrink-0 mr-2 mt-0.5" />
-                    <span className="text-xs">{feature}</span>
+                    <Check className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
+                    <span className="text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
