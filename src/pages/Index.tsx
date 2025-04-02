@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -10,6 +10,7 @@ import IntegrationLogosSection from '@/components/IntegrationLogosSection';
 import AboutSection from '@/components/AboutSection';
 import CtaSection from '@/components/CtaSection';
 import ChatWidget from '@/components/ChatWidget';
+import IndustrySolutions from '@/components/IndustrySolutions';
 
 const Index = () => {
   const scrollToPricing = () => {
@@ -18,6 +19,28 @@ const Index = () => {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  
+  useEffect(() => {
+    // Add smooth scrolling to all links with hash
+    const handleNavClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const link = target.closest('a');
+      
+      if (link && link.hash && link.hash.startsWith('#')) {
+        event.preventDefault();
+        const targetElement = document.querySelector(link.hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleNavClick);
+    
+    return () => {
+      document.removeEventListener('click', handleNavClick);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -25,6 +48,7 @@ const Index = () => {
       <Hero />
       <AIDemoSection scrollToPricing={scrollToPricing} />
       <Features />
+      <IndustrySolutions />
       <IntegrationLogosSection />
       <AboutSection />
       <Pricing />

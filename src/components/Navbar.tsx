@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  
   return (
-    <nav className="w-full py-4 bg-background border-b">
+    <nav className="w-full py-4 bg-background border-b sticky top-0 z-50">
       <div className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Link to="/" className="font-bold text-2xl text-primary hover:opacity-90 transition-opacity">Zephyr</Link>
@@ -20,6 +20,9 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6">
           <a href="#features" className="text-foreground hover:text-primary transition-colors">
             Features
+          </a>
+          <a href="#industries" className="text-foreground hover:text-primary transition-colors">
+            Industries
           </a>
           <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
             Pricing
@@ -47,6 +50,13 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Features
+              </a>
+              <a 
+                href="#industries" 
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Industries
               </a>
               <a 
                 href="#pricing" 
