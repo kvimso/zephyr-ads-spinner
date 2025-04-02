@@ -31,6 +31,9 @@ const Index = () => {
         const targetElement = document.querySelector(link.hash);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
+          
+          // Update URL without page reload
+          window.history.pushState(null, '', link.hash);
         }
       }
     };
@@ -48,7 +51,13 @@ const Index = () => {
       <Hero />
       <AIDemoSection scrollToPricing={scrollToPricing} />
       <Features />
-      <IndustrySolutions />
+      <div className="container px-4 md:px-6 py-10 text-center">
+        <h2 className="text-3xl font-bold mb-4">Explore Our Industry Solutions</h2>
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          See a preview of our industry-specific solutions below, or visit our dedicated industries page for more details.
+        </p>
+        <IndustrySolutions />
+      </div>
       <IntegrationLogosSection />
       <AboutSection />
       <Pricing />
